@@ -1,12 +1,19 @@
 import "./MainContent.css";
 import Paragraph from "./Paragraph";
 import { reasonTexts, waysTexts } from "../../constants/texts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MainContent = ({ initialTextActive }) => {
 
      //false for first choice true for second choice
      const [choiceSelected, setChoiceSelected] = useState(false);
+     const [loadEffect, setLoadEffect] = useState(false);
+     
+     useEffect(() => {
+          setTimeout(() => {
+               setLoadEffect(true);
+          }, 200);
+     }, []);
 
      function handleChoiceSelected(choice) {
           setChoiceSelected(choice); 
@@ -15,7 +22,7 @@ const MainContent = ({ initialTextActive }) => {
      return (
           <>
           <div className="phone-numbers"><span className="english-phone-number">English: 1-800-784-8669</span><span className="spanish-phone-number">Spanish: 1-855-335-3569</span></div>
-          <div className={initialTextActive ? 'main' : 'main active'}>
+          <div className={initialTextActive || !loadEffect ? 'main' : 'main active'}>
           <div className='main-choice-selector'>
             <div className='main-choice-selector--choice' onClick={() => handleChoiceSelected(false)} style={!choiceSelected ? {backgroundColor:"#FFA458", color: "black"}:null}>
               10 <span style={{color: "white"}}>REASONS</span> to quit smoking

@@ -20,10 +20,10 @@
      gap: 50px;
      top: -100%;
      opacity: 0;
-     -webkit-transition: all 1.5s ease;
-     -moz-transition: all 1.5s ease;
-     -o-transition: all 1.5s ease;
-     transition: all 1.5s ease;
+     -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+     -o-transition: all 1s ease;
+     transition: all 1s ease;
    }
 
    .main.active{
@@ -112,5 +112,19 @@
      }
      .paragraph {
           align-items: center;
+     }
+}
+
+@media (max-width: 600px) {
+     .main-choice-selector--choice {
+          font-size: 1.2em;
+          padding: 20px 35px;
+     }
+}
+
+@media (max-width: 450px) {
+     .main-choice-selector--choice {
+          font-size: 1em;
+          padding: 15px 25px;
      }
 }
