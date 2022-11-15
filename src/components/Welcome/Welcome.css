@@ -1,0 +1,67 @@
+.first-text {
+     color: white;
+     font-size: 2rem;
+     position: absolute;
+     top: 150%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     text-align: center;
+     -webkit-transition: all 1.5s ease;
+     -moz-transition: all 1.5s ease;
+     -o-transition: all 1.5s ease;
+     transition: all 1.5s ease;
+     opacity: 0;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   
+   .first-text.active {
+     top: 50%;
+     opacity: 1;
+   }
+   
+   #first-text-1, #first-text-2, #first-text-3 {
+     margin: 10px;
+   }
+   
+   #first-text-2 {
+     width: 90vw;
+   }
+   
+   #howtoquitsmoking {
+     color: #FFA458;
+   }
+   
+   .continue-button {
+     background-color: #FFA458;
+     padding: 10px 20px;
+     width: auto;
+     margin-top: 3rem;
+     border-radius: 5px;
+     -webkit-transition: all .3s ease;
+     -moz-transition: all .3s ease;
+     -o-transition: all .3s ease;
+     transition: all .3s ease;
+     font-size: 1.5em;
+     font-weight: bold;
+     color: black;
+     cursor: pointer;
+   }
+   
+   .continue-button:hover {
+     transform: translateY(-5px);
+   
+   }
+
+   @media (max-width: 850px) {
+    .first-text {
+      font-size: 1.5rem;
+    }
+}
+@media (max-width: 500px) {
+  .first-text {
+    font-size: 1.2rem;
+  }
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
-
+import MainContent from './components/MainContent/MainContent';
+import Welcome from './components/Welcome/Welcome';
 function App() {
+
+  const [initialTextActive, setInitialTextActive] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("welcomeActive") !== "false") {
+      setTimeout(() => {
+        setInitialTextActive(true);
+      }, 500);
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Welcome initialTextActive={initialTextActive} setInitialTextActive={setInitialTextActive} />
+      <MainContent initialTextActive={initialTextActive}/>
     </div>
   );
 }
